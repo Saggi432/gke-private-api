@@ -5,7 +5,7 @@ This helm chart lets you to access your k8s api server from your desktop when yo
 
 ## Objective
 
-Currently there are several ways to access a k8s-api-server configured with private end point on GCP.
+Currently there are several ways to access a k8s-api-server configured with private end point on GCP. By deploying this helm chart you should be able to access the k8s api from your desktop as long as you are in your corporate network.
 
 
 
