@@ -20,8 +20,7 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters#private_
 
 - Assume that the VPC is configured with corporate VPN so that you can still access the other compute instances/loadbalancers configured on the VPC once you are in your corporate network.
 - Helm3 is installed and configured on your cluster
-- You have a hosted zone configure on Route53 so that you can create CNAME with FQDN for the generated load balancer. However if an external-dns is already running on your cluster these changes are not required.
-
+- (Optional) If you have a hosted zone configured on Route53 so that you can create CNAME with FQDN for the generated loadbalancer and then use FQDN instead.
 
 ## Installation
 
@@ -31,6 +30,10 @@ Use the package manager helm to install.
 
 git clone https://github.com/Saggi432/k8s-private-api.git
 cd k8s-private-api
+helm install . --namespace default --name k8s-private-api 
+
+*with FQDN
+
 helm install . --namespace default --name k8s-private-api --set fqdn=k8s-api-proxy.myhostezone.com
 
 ```
@@ -38,7 +41,7 @@ helm install . --namespace default --name k8s-private-api --set fqdn=k8s-api-pro
 ## Usage
 
 ```python
-export LB_IP=`kubectl get  service/k8s-api-proxy \
+export LB_IP=`kubectl get  service/k8s-private-api-k8s-api-proxy \
 -o jsonpath='{.status.loadBalancer.ingress[].ip}'`
 export https_proxy=$LB_IP:8118
 kubectl get pods -v100
