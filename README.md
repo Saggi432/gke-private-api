@@ -29,7 +29,7 @@ Use the package manager helm to install.
 ```bash
 git clone https://github.com/Saggi432/k8s-private-api.git
 cd k8s-private-api
-helm install .
+helm install . --namespace default --name k8s-private-api
 ```
 
 ## Usage
