@@ -32,7 +32,7 @@ git clone https://github.com/Saggi432/k8s-private-api.git
 cd k8s-private-api
 helm install . --namespace default --name k8s-private-api 
 
-*with FQDN
+with FQDN
 
 helm install . --namespace default --name k8s-private-api --set fqdn=k8s-api-proxy.myhostezone.com
 
