@@ -35,7 +35,9 @@ helm install .
 ## Usage
 
 ```python
-export https_proxy=http://k8s-private-api.<hostedzone>.com
+export LB_IP=`kubectl get  service/k8s-api-proxy \
+-o jsonpath='{.status.loadBalancer.ingress[].ip}'`
+export https_proxy=$LB_IP:8118
 kubectl get pods -v100
 ```
 
