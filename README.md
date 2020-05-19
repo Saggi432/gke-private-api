@@ -26,7 +26,7 @@ Use the package manager helm to install.
 
 ```bash
 
-git clone https://github.com/Saggi432/k8s-private-api.git
+git clone https://github.com/Saggi432/gke-private-api.git
 cd k8s-private-api
 helm install . --namespace default --name k8s-private-api 
 
