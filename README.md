@@ -20,7 +20,7 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters#private_
 
 - Assume that the VPC is configured with corporate VPN so that you can still access the other compute instances/loadbalancers configured on the VPC once you are in your corporate network.
 - Helm3 is installed and configured on your cluster
-- (Optional) You have a hosted zone configure on Route53, this is not required if you have external-dns configured on your re
+- You have a hosted zone configure on Route53 so that you can create an FQDN for the configured load balancer. However if you have already configured external-dns this configuration is not required.
 
 ## Installation
 
