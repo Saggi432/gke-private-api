@@ -22,6 +22,7 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters#private_
 
 ## Installation
 
+Login to any of the bastion host you may have configured to connect to the cluster from the private VPC.
 Use the package manager helm to install.
 
 ```bash
