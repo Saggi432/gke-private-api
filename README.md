@@ -7,17 +7,24 @@ This helm chart lets you to access your k8s api server from your desktop when yo
 
 Currently there are several ways to access a k8s-api-server configured with private end point on GCP. By deploying this helm chart you should be able to access the k8s api from your desktop as long as you are in your corporate network.
 
+The solution is based on the below link, which requires many manual steps of creating a docker image, k8s deployment and network load balancer to access an API servers. By using this helm chart it avoids these manual steps.
+
+https://cloud.google.com/solutions/creating-kubernetes-engine-private-clusters-with-net-proxies
+
+This solution is targetted towards GKE private clusters with no access to public endpoint.
+
+https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters#private_master
 
 
 ## Prerequisites
 
-- Assume that the VPC is configured with corporate VPN or TRANSIT GW so that you can still access the other compute instances/loadbalancers configured on the VPC
+- Assume that the VPC is configured with corporate VPN so that you can still access the other compute instances/loadbalancers configured on the VPC once you are in your corporate network.
 - Helm3 is installed and configured on your cluster
-- (Optional) You have a hosted zone configure on Route53, this is not required if you have external-dns configured on your reserver.
+- (Optional) You have a hosted zone configure on Route53, this is not required if you have external-dns configured on your re
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager helm to install.
 
 ```bash
 git clone https://github.com/Saggi432/k8s-private-api.git
