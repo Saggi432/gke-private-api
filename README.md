@@ -1,4 +1,4 @@
-# k8s-private-api 
+# gke-private-api 
 
 This helm chart lets you to access your k8s api server from your desktop when your api server end point is configured as a private endpoint.
 
