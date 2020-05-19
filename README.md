@@ -27,9 +27,11 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters#private_
 Use the package manager helm to install.
 
 ```bash
+
 git clone https://github.com/Saggi432/k8s-private-api.git
 cd k8s-private-api
-helm install . --namespace default --name k8s-private-api
+helm install . --namespace default --name k8s-private-api --set fqdn=k8s-api-proxy.myhostezone.com
+
 ```
 
 ## Usage
